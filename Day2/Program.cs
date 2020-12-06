@@ -11,7 +11,9 @@ namespace Day2
         static void Main(string[] args)
         {
             PasswordList pL = new PasswordList(PATH_INPUT);
-            Console.Write("Valid passwords " + pL.ValidPasswordsCount().ToString()); 
+            PasswordListTobbogan pLT = new PasswordListTobbogan(PATH_INPUT);
+            Console.Write("Valid passwords " + pL.ValidPasswordsCount().ToString());
+            Console.Write("Valid passwords new scheme " + pLT.ValidPasswordsCount().ToString());
         }
     }
 }

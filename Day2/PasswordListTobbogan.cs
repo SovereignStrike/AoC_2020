@@ -1,19 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
+
 namespace Day2
 {
-    public class PasswordList
+    public class PasswordListTobbogan
     {
-        public List<PasswordRecord> records { get; set; }
-        
-            public PasswordList(string inputFilePath)
+        public List<PasswordRecordTobboggan> records { get; set; }
+
+        public PasswordListTobbogan(string inputFilePath)
         {
             List<string> passwords = Read(inputFilePath);
-            records = new List<PasswordRecord>();
+            records = new List<PasswordRecordTobboggan>();
             foreach (string pass in passwords)
             {
-                records.Add(new PasswordRecord(pass));
+                records.Add(new PasswordRecordTobboggan(pass));
             }
         }
 
@@ -34,7 +36,7 @@ namespace Day2
         public int ValidPasswordsCount()
         {
             int i = 0;
-            foreach (PasswordRecord record in records)
+            foreach (PasswordRecordTobboggan record in records)
             {
                 if (record.IsValid())
                 { i++; }
@@ -45,3 +47,4 @@ namespace Day2
 
     }
 }
+

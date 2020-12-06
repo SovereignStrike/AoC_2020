@@ -23,5 +23,21 @@ namespace Day2Tests
 
             Assert.AreEqual(2, pL.ValidPasswordsCount());
         }
+
+        [TestMethod]
+        public void PassWorlistTobogganTest()
+        {
+
+            List<string> testInput = new List<string>();
+            testInput.Add("1-3 a: abcde");
+            testInput.Add("1-3 b: cdefg");
+            testInput.Add("2-9 c: ccccccccc");
+            // Act
+
+
+            PasswordListTobbogan pL = new PasswordListTobbogan(FileUtils.CreateTempFileFromList(testInput));
+
+            Assert.AreEqual(1, pL.ValidPasswordsCount());
+        }
     }
 }

@@ -35,4 +35,27 @@ namespace Day2
                 return (i >= minrange && i <= maxrange);
            }
     }
+
+    public class PasswordRecordTobboggan
+    {
+        private char[] pass;
+        private int firstposition;
+        private int secondposition;
+        private char criteria;
+
+
+        public PasswordRecordTobboggan(string pass)
+        {
+            string[] parts = pass.Split(" ");
+            this.firstposition = Int32.Parse(parts[0].Split("-")[0])-1;
+            this.secondposition = Int32.Parse(parts[0].Split("-")[1])-1;
+            this.criteria = char.Parse(parts[1].Trim(new Char[] { ':' }));
+            this.pass = parts[2].ToCharArray();
+        }
+
+        public bool IsValid()
+        {
+              return (pass[firstposition]==criteria ^ pass[secondposition] == criteria);
+        }
+    }
 }
