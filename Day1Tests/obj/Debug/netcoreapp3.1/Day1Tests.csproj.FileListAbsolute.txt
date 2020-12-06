@@ -96,3 +96,4 @@ C:\Users\franc\source\repos\AoC_2020\Day1Tests\obj\Debug\netcoreapp3.1\Day1Tests
 C:\Users\franc\source\repos\AoC_2020\Day1Tests\obj\Debug\netcoreapp3.1\Day1Tests.dll
 C:\Users\franc\source\repos\AoC_2020\Day1Tests\obj\Debug\netcoreapp3.1\Day1Tests.pdb
 C:\Users\franc\source\repos\AoC_2020\Day1Tests\obj\Debug\netcoreapp3.1\Day1Tests.genruntimeconfig.cache
+C:\Users\franc\source\repos\AoC_2020\Day1Tests\bin\Debug\netcoreapp3.1\input.dat

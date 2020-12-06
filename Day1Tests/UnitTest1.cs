@@ -11,7 +11,39 @@ namespace Day1Tests
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestMethodTwoNumbers()
+        {
+            //create tempinputfile
+
+            // Arrange
+            List<string> testInput = new List<string>();
+            testInput.Add("1721");
+            testInput.Add("979");
+            testInput.Add("366");
+            testInput.Add("299");
+            testInput.Add("675");
+            testInput.Add("1456");
+            Guid gUID = Guid.NewGuid();
+
+            string testInputFilePath = Path.GetTempPath() + gUID + ".temp";
+            StreamWriter sw = new StreamWriter(testInputFilePath);
+            foreach (string val in testInput)
+            { sw.WriteLine(val); }
+            sw.Close();
+            // Act
+
+            int output;            
+            Report rep = new Report(testInputFilePath);
+            output = rep.Compute();
+            // Assert
+
+            Assert.AreEqual(514579, output);
+
+
+
+        }
+        [TestMethod]
+        public void TestMethodThreeNumbers()
         {
             //create tempinputfile
 
@@ -23,23 +55,20 @@ namespace Day1Tests
             testInput.Add("299");
             testInput.Add("675");
             testInput.Add("1456");
-            Guid gUID = new Guid();
+            Guid gUID = Guid.NewGuid();
             string testInputFilePath = Path.GetTempPath() + gUID + ".temp";
             StreamWriter sw = new StreamWriter(testInputFilePath);
             foreach (string val in testInput)
             { sw.WriteLine(val); }
             sw.Close();
-            // Act?
-
+            // Act
             int output;
-            output = 1;
 
-            
-                Report rep = new Report(testInputFilePath);
-            output = rep.Compute();
-            // Assert?
+            Report rep = new Report(testInputFilePath);
+            output = rep.ComputeTriple();
+            // Assert
 
-            Assert.AreEqual(514579, output);
+            Assert.AreEqual(241861950, output);
 
 
 

@@ -22,8 +22,22 @@ namespace Day1
             {
                 int match = FindComplement(value);
                 if (match != -1)
-                { return value * match; }
-                    
+                { return value * match; }  
+            }
+            return 0;
+
+        }
+
+        public int ComputeTriple()
+        {
+            foreach (int value in values)
+            {
+                foreach (int value2 in values)
+                {
+                    int match = FindComplement(value+value2);
+                    if (match != -1)
+                    { return value2 * value * match; }
+                }
                     
             }
             return 0;
@@ -53,7 +67,20 @@ namespace Day1
             }
 
             return -1;
+         }
+
+        private int GetPairs(int match)
+        {
+            foreach (int val in values)
+            {
+                if (match + val == 2020)
+                {
+                    return val;
                 }
+            }
+
+            return -1;
+        }
 
 
     }

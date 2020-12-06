@@ -8,7 +8,8 @@ namespace Day1
         static void Main(string[] args)
         {
             Report rep = new Report(PATH_INPUT);
-            Console.Write(rep.Compute());
+            Console.Write("Two numbers: " + rep.Compute());
+            Console.Write("Three numbers: " + rep.ComputeTriple());
         }
 
 
