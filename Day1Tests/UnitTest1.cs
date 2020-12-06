@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Day1;
+using ChristmasUtils;
 
 
 namespace Day1Tests
@@ -13,9 +14,7 @@ namespace Day1Tests
         [TestMethod]
         public void TestMethodTwoNumbers()
         {
-            //create tempinputfile
-
-            // Arrange
+                        // Arrange
             List<string> testInput = new List<string>();
             testInput.Add("1721");
             testInput.Add("979");
@@ -23,30 +22,22 @@ namespace Day1Tests
             testInput.Add("299");
             testInput.Add("675");
             testInput.Add("1456");
-            Guid gUID = Guid.NewGuid();
-
-            string testInputFilePath = Path.GetTempPath() + gUID + ".temp";
-            StreamWriter sw = new StreamWriter(testInputFilePath);
-            foreach (string val in testInput)
-            { sw.WriteLine(val); }
-            sw.Close();
+            int output;  
+            
             // Act
-
-            int output;            
-            Report rep = new Report(testInputFilePath);
+                               
+            Report rep = new Report(FileUtils.CreateTempFileFromList(testInput));
             output = rep.Compute();
             // Assert
 
             Assert.AreEqual(514579, output);
 
-
-
         }
         [TestMethod]
         public void TestMethodThreeNumbers()
         {
-            //create tempinputfile
-
+            
+int output;
             // Arrange?
             List<string> testInput = new List<string>();
             testInput.Add("1721");
@@ -55,16 +46,11 @@ namespace Day1Tests
             testInput.Add("299");
             testInput.Add("675");
             testInput.Add("1456");
-            Guid gUID = Guid.NewGuid();
-            string testInputFilePath = Path.GetTempPath() + gUID + ".temp";
-            StreamWriter sw = new StreamWriter(testInputFilePath);
-            foreach (string val in testInput)
-            { sw.WriteLine(val); }
-            sw.Close();
+            
             // Act
-            int output;
+            
 
-            Report rep = new Report(testInputFilePath);
+            Report rep = new Report(FileUtils.CreateTempFileFromList(testInput));
             output = rep.ComputeTriple();
             // Assert
 

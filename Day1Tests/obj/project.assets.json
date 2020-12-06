@@ -1635,6 +1635,16 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "ChristmasUtils/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/ChristmasUtils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ChristmasUtils.dll": {}
+        }
+      },
       "Day1/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -5717,6 +5727,11 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "ChristmasUtils/1.0.0": {
+      "type": "project",
+      "path": "../ChristmasUtils/ChristmasUtils.csproj",
+      "msbuildProject": "../ChristmasUtils/ChristmasUtils.csproj"
+    },
     "Day1/1.0.0": {
       "type": "project",
       "path": "../Day1/Day1.csproj",
@@ -5725,6 +5740,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "ChristmasUtils >= 1.0.0",
       "Day1 >= 1.0.0",
       "MSTest.TestAdapter >= 2.1.1",
       "MSTest.TestFramework >= 2.1.1",
@@ -5759,6 +5775,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
+            "C:\\Users\\franc\\source\\repos\\AoC_2020\\ChristmasUtils\\ChristmasUtils.csproj": {
+              "projectPath": "C:\\Users\\franc\\source\\repos\\AoC_2020\\ChristmasUtils\\ChristmasUtils.csproj"
+            },
             "C:\\Users\\franc\\source\\repos\\AoC_2020\\Day1\\Day1.csproj": {
               "projectPath": "C:\\Users\\franc\\source\\repos\\AoC_2020\\Day1\\Day1.csproj"
             }
