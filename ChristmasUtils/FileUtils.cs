@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 
 namespace ChristmasUtils
@@ -18,5 +19,19 @@ namespace ChristmasUtils
             return testInputFilePath;
 
                }
+
+        protected List<string> Read(string testInputFilePath)
+        {
+            StreamReader sr = new StreamReader(testInputFilePath);
+            List<string> values = new List<string>();
+            while (sr.Peek() != -1)
+            {
+                values.Add(sr.ReadLine());
+
+            }
+            return values;
+
+
+        }
     }
 }
