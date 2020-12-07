@@ -20,7 +20,9 @@ namespace ChristmasUtils
 
                }
 
-        protected List<string> Read(string testInputFilePath)
+        
+
+        static public List<string> Read(string testInputFilePath)
         {
             StreamReader sr = new StreamReader(testInputFilePath);
             List<string> values = new List<string>();
