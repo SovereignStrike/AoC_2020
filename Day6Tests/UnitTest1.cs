@@ -17,5 +17,16 @@ namespace Day6Tests
 
             
         }
+        [TestMethod]
+        public void TestMethodAll()
+        {
+
+
+            QuestionnaireList bL = new QuestionnaireList("testdata.dat");
+
+            Assert.AreEqual(6, bL.AllPositiveAnswers());
+
+
+        }
     }
 }

@@ -11,7 +11,8 @@ namespace Day6
                 QuestionnaireList quests = new QuestionnaireList(PATH_INPUT);
 
                 Console.Write("Total positive answers : " + quests.PositiveAnswers());
-            }
+            Console.Write("Total positive answers (all in group must be positive : " + quests.AllPositiveAnswers());
+        }
         
     }
 }

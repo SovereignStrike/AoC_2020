@@ -28,5 +28,15 @@ namespace Day6
             }
             return answers;
         }
+
+        public int AllPositiveAnswers()
+        {
+            int answers = 0;
+            foreach (Questionnaire q in questionnaires)
+            {
+                answers = answers + q.AllPositiveQuestions();
+            }
+            return answers;
+        }
     }
 }

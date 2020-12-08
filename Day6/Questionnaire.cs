@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Day6
@@ -32,6 +33,16 @@ namespace Day6
 
         public int PositiveQuestions()
         {
-            return totals.Count; }
+            return totals.Count; 
+        }
+
+        public int AllPositiveQuestions()
+        {
+            return totals.Where(x => x.Value == answers.Count).Count();
+        }
     }
+
+    
 }
+        
+
