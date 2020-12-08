@@ -35,5 +35,30 @@ namespace ChristmasUtils
 
 
         }
+
+        static public List<string> BufferRead(string path)
+        {
+            StreamReader sr = new StreamReader(path);
+            List<string> values = new List<string>();
+            string buffer;
+            buffer = "";
+            while (sr.Peek() != -1)
+            {
+                string line = sr.ReadLine();
+                if (line.Equals(""))
+                {
+                    values.Add(buffer.Trim());
+                    buffer = "";
+                }
+                else
+                {
+                    buffer = buffer + " " + line;
+                }
+
+            }
+            values.Add(buffer.Trim());
+            sr.Close();
+            return values;
+        }
     }
 }
