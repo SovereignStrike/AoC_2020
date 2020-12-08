@@ -9,7 +9,8 @@ namespace Day5
         {
             BoardingPassList passes = new BoardingPassList(PATH_INPUT);
 
-            Console.Write("Valid passports : " + passes.HighestId());
+            Console.Write("Highest boarding pass : " + passes.HighestId());
+            Console.Write("First empty seat : " + passes.FirstEmptySeat());
         }
     }
 }
