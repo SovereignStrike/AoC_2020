@@ -43,5 +43,10 @@ namespace Day7
             }
             return i; 
         }
+
+        public int CountBagsInBag(string color)
+        {
+            return bags.Find(x => x.color == color).HowManyBagsCanIHold(bags);
+        }
     }
 }

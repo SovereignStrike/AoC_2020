@@ -22,17 +22,18 @@ namespace Day7
             
         }
 
-        public int HowManyGoldenBagsCanIHold(List<Bag> all_bags)
+        public int HowManyBagsCanIHold(List<Bag> all_bags)
         {
             int i = 0;
 
 
+
             foreach (KeyValuePair<string,int> bag in inner_bags)
             {
-                if (bag.Key == "shiny golden")
-                { i = i + bag.Value; }
-                else
-                { i = i + all_bags.Find(x => x.color == bag.Key).HowManyGoldenBagsCanIHold(all_bags); }
+                int j;
+                i = i + bag.Value;
+                j = all_bags.Find(x => x.color == bag.Key).HowManyBagsCanIHold(all_bags);
+                i = i + bag.Value * j;
                 
             }
 

@@ -37,5 +37,13 @@ namespace Day7Tests
 
             Assert.AreEqual(4, r.CountGoldenBags());
         }
+
+        [TestMethod]
+        public void fullinputcounttest()
+        {
+            Rules r = new Rules("testinput.dat");
+
+            Assert.AreEqual(32, r.CountBagsInBag("shiny gold"));
+        }
     }
 }
