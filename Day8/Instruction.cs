@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Day8
 {
-    class Instruction
+    public class Instruction
     {
         public string verb;
         public int increment;
@@ -18,7 +18,20 @@ namespace Day8
 
         public string Raw { get; }
 
-        
+        public Instruction flip()
+        {
+            switch (verb)
+            { 
+                case "nop":
+                    verb = "jmp";
+                    return this;
+                case "jmp":
+                    verb = "nop";
+                    return this;
+                default:
+                    return this;
+            }
+        }
 
         internal (int , int) Execute((int current_line, int accumulator) state)
         {
